@@ -27,6 +27,7 @@ class IPAddressController extends Controller
         return redirect()->route('client.ips')
             ->with('request', json_encode($request))
             ->with('has_result' , true)
-            ->with('ip_addresses', json_encode($request->getClientIps()));
+            ->with('IP Address using Request::ip() -> ', Request::ip())
+            ->with('IP Address using getClientIps() ->', json_encode($request->getClientIps()));
     }
 }
