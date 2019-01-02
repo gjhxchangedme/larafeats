@@ -14,7 +14,8 @@
         <div class="panel-body">
             @if(session()->has('request'))
                 Request: {{ session('request') }} <br />
-                Result: {{ session('ip_addresses') }} <br />
+                Using $request->ip(): {{ session('ip_address') }} <br />
+                Using $request->getClientIps() : {{ session('ip_addresses') }} <br />
             @endif
         </div>
     </div>
