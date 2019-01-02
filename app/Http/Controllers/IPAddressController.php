@@ -27,6 +27,7 @@ class IPAddressController extends Controller
         return redirect()->route('client.ips')
         ->with('has_result' , true)
             ->with('request', json_encode($request))
+            ->with('header', json_encode($request->header()))
             ->with('original_ip_address', $this->getOriginalClientIp($request))
             ->with('ip_address', $request->ip())
             ->with('ip_addresses', json_encode($request->getClientIps()));
@@ -45,7 +46,7 @@ class IPAddressController extends Controller
         $xForwardedFor = $request->header('x-forwarded-for');
         if (empty($xForwardedFor)) {
             // $ip = $request->ip();
-            return null;
+            return 'Not found';
         } else {
             $ips = is_array($xForwardedFor) ? $xForwardedFor : explode(', ', $xForwardedFor);
             $ip = $ips[0];

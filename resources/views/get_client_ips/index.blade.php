@@ -13,10 +13,12 @@
     <div class="panel">
         <div class="panel-body">
             @if(session()->has('request'))
-                Request: {{ session('request') }} <br />
-                Custom Function: {{ session('original_ip_address') }} <br />
-                Using $request->ip(): {{ session('ip_address') }} <br />
-                Using $request->getClientIps() : {{ session('ip_addresses') }} <br />
+                Request: <pre>{{ session('request') }}</pre> <br />
+                Headers: <pre>{{ session('header') }}</pre>
+                Custom Function: <pre>{{ session('original_ip_address') }}</pre> <br />
+                Using $request->ip(): <pre>{{ session('ip_address') }}</pre> <br />
+                Using $request->getClientIps() : <pre>{{ session('ip_addresses') }}</pre> <br />
+                Session ID: <pre>{{ session()->getId() }}</pre><br/>
             @endif
         </div>
     </div>
