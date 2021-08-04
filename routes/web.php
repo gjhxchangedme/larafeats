@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,13 +14,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	return view('welcome');
 });
 
 Route::get('get-ip-addresses', [
-    'as' => 'client.ips', 'uses' => 'IPAddressController@index'
+	'as' => 'client.ips', 'uses' => 'IPAddressController@index'
 ]);
 
 Route::post('get-ip-addresses', [
-    'as' => 'fetch.client.ips', 'uses' => 'IPAddressController@store'
+	'as' => 'fetch.client.ips', 'uses' => 'IPAddressController@store'
 ]);
