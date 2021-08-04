@@ -159,7 +159,7 @@
 		output(syntaxHighlight(JSON.stringify($('#fetch-ip-form').data('request'), undefined, 4)), '#request-content');
 		output(syntaxHighlight(JSON.stringify($('#fetch-ip-form').data('original-ip-address'), undefined, 4)), '#original-ip-address-content');
 		output(syntaxHighlight(JSON.stringify($('#fetch-ip-form').data('header'), undefined, 4)), '#header-content');
-		output(syntaxHighlight(JSON.stringify($('#fetch-ip-form').data('ip_address'), undefined, 4)), '#ip-address-content');
+		output(syntaxHighlight(JSON.stringify($('#fetch-ip-form').data('ip-address'), undefined, 4)), '#ip-address-content');
 		output(syntaxHighlight(JSON.stringify($('#fetch-ip-form').data('id'), undefined, 4)), '#id-content');
 
 	</script>
