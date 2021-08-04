@@ -31,6 +31,12 @@ class IPAddressController extends Controller
 			->with('header', json_encode($request->header()))
 			->with('original_ip_address', $this->getOriginalClientIp($request))
 			->with('ip_address', $request->ip())
+			->with('HTTP_CLIENT_IP', getenv('HTTP_CLIENT_IP'))
+			->with('HTTP_X_FORWARDED_FOR', getenv('HTTP_X_FORWARDED_FOR'))
+			->with('HTTP_X_FORWARDED', getenv('HTTP_X_FORWARDED'))
+			->with('HTTP_FORWARDED_FOR', getenv('HTTP_FORWARDED_FOR'))
+			->with('HTTP_FORWARDED', getenv('HTTP_FORWARDED'))
+			->with('REMOTE_ADDR', getenv('REMOTE_ADDR'))
 			->with('http_true_client_ip', $_SERVER['HTTP_TRUE_CLIENT_IP'] ?? '<Not Set>')
 			->with('ip_addresses', json_encode($request->getClientIps()));
 	}

@@ -110,6 +110,22 @@
 						<h5>Result</h5>
 						<p>{{ session('ip_addresses') }}</p>
 					</li>
+					<li>
+						<h3>Using getenv</h3>
+						<h5>Code Used:</h5>
+						<pre>getenv()</pre>
+						<h5>Result</h5>
+						<br />
+							<ul>
+								<li>HTTP_CLIENT_IP: {{ session('HTTP_CLIENT_IP') }}</li>
+								<li>HTTP_X_FORWARDED_FOR: {{ session('HTTP_X_FORWARDED_FOR') }}</li>
+								<li>HTTP_X_FORWARDED: {{ session('HTTP_X_FORWARDED') }}</li>
+								<li>HTTP_FORWARDED_FOR: {{ session('HTTP_FORWARDED_FOR') }}</li>
+								<li>HTTP_FORWARDED: {{ session('HTTP_FORWARDED') }}</li>
+								<li>REMOTE_ADDR: {{ session('REMOTE_ADDR') }}</li>
+							</ul>
+						<br />
+					</li>
 
 					<li>
 						<h3>Session ID</h3>
