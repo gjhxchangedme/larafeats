@@ -98,7 +98,6 @@
 				<div class="links">
 					<a href="https://github.com/gjhuerte/larafeats">GitHub</a>
 					<a href="{{ route('client.ips') }}">My IP Addresses</a>
-					<a href="{{ route('test.api') }}">Test API</a>
 				</div>
 			</div>
 		</div>

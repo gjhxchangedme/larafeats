@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::get('test', [
-	'as' => 'test.api',
-	'uses' =>  'TestController@index',
-]);
+Route::get('/', 'ApiController@index');
+Route::post('login', 'ApiController@login');
+Route::post('logout', 'ApiController@logout');
+Route::post('dashboard', 'ApiController@dashboard');
