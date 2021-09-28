@@ -79,12 +79,13 @@ class ApiController extends Controller
 	public function dashboard(Request $request)
 	{
 		$authKey = str_replace('Bearer ', '', $request->header('Authorization'));
+		$randomDecimal = mt_rand(100, 9999) / 100;
 		if ($authKey == 'thisisanexampleauthenticationkey') {
 			return response()->json([
 				'status' => 'success',
 				'message' => 'Successfully authenticated user.',
 				'data' => [
-					'rate' => 10.23,
+					'rate' => (float) number_format($randomDecimal, 2),
 				],
 			]);
 		}
